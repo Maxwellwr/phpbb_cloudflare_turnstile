@@ -1,0 +1,18 @@
+<div class="turnstile-container">
+	{% if S_TURNSTILE_AVAILABLE %}
+		{% if not INCLUDED_TURNSTILE_CSS %}
+			{% INCLUDECSS '@maxwellwr_turnstile/css/turnstile.min.css' %}
+			{%- set INCLUDED_TURNSTILE_CSS = true -%}
+		{% endif %}
+		{% if U_TURNSTILE_SCRIPT and not INCLUDED_TURNSTILE_JS %}
+			{% INCLUDEJS U_TURNSTILE_SCRIPT %}
+			{%- set INCLUDED_TURNSTILE_JS = true -%}
+		{% endif %}
+		<noscript>
+			<div class="turnstile-error rules error">{{ lang('TURNSTILE_NOSCRIPT') }}</div>
+		</noscript>
+		<div class="cf-turnstile" data-sitekey="{{ TURNSTILE_KEY }}"{% if TURNSTILE_THEME %} data-theme="{{ TURNSTILE_THEME }}"{% endif %}{% if TURNSTILE_SIZE %} data-size="{{ TURNSTILE_SIZE }}"{% endif %}></div>
+	{% else %}
+		<div class="turnstile-error rules error">{{ lang('TURNSTILE_NOT_AVAILABLE') }}</div>
+	{% endif %}
+</div>

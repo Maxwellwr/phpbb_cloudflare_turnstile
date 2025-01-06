@@ -1,0 +1,17 @@
+{% if S_TURNSTILE_AVAILABLE %}
+	{% if U_TURNSTILE_SCRIPT and not INCLUDED_TURNSTILE_JS %}
+		{% INCLUDEJS U_TURNSTILE_SCRIPT %}
+		{%- set INCLUDED_TURNSTILE_JS = true -%}
+	{% endif %}
+	<noscript>
+		<div class="errorbox"><p>{{ lang('TURNSTILE_NOSCRIPT') }}</p></div>
+	</noscript>
+	<dl>
+		<dt>&nbsp;</dt>
+		<dd>
+			<div class="cf-turnstile" data-sitekey="{{ TURNSTILE_KEY }}"{% if TURNSTILE_THEME %} data-theme="{{ TURNSTILE_THEME }}"{% endif %}{% if TURNSTILE_SIZE %} data-size="{{ TURNSTILE_SIZE }}"{% endif %}></div>
+		</dd>
+	</dl>
+{% else %}
+	<div class="errorbox"><p>{{ lang('TURNSTILE_NOT_AVAILABLE') }}</p></div>
+{% endif %}

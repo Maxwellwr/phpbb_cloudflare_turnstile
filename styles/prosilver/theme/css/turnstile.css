@@ -1,0 +1,27 @@
+/**
+ * CloudFlare Turnstile extension for phpBB.
+ * @author Maxim Maslich <mmaslich@gmail.com>
+ * @copyright 2025 Maxim Maslich
+ * @license GPL-2.0-only
+ */
+.turnstile-container {
+	margin: 1em auto;
+}
+
+.turnstile-error,
+.section-app\/contactadmin .turnstile-container .cf-turnstile,
+#register .turnstile-container .cf-turnstile {
+	text-align: center;
+}
+
+#login .turnstile-container .cf-turnstile {
+	margin-left: 16em;
+}
+
+#postform .turnstile-container .cf-turnstile {
+	margin-left: 15em;
+}
+
+.section-app\/contactadmin #postform .turnstile-container .cf-turnstile {
+	margin: 0;
+}

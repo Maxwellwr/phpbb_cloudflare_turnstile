@@ -1,0 +1,22 @@
+services:
+    maxwellwr.turnstile.helper:
+        class: maxwellwr\turnstile\includes\helper
+        arguments:
+            - '@language'
+
+    maxwellwr.turnstile.captcha.turnstile:
+        class: maxwellwr\turnstile\captcha\plugins\turnstile
+        arguments:
+            - '@config'
+            - '@user'
+            - '@request'
+            - '@template'
+            - '@language'
+            - '@log'
+            - '@maxwellwr.turnstile.helper'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        calls:
+            - ['set_name', ['maxwellwr.turnstile.captcha.turnstile']]
+        tags:
+            - { name: captcha.plugins }

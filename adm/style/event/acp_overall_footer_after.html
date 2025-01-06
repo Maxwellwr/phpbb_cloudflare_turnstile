@@ -1,0 +1,4 @@
+{% if S_TURNSTILE_SETTINGS and not INCLUDED_TURNSTILE_ACP_JS %}
+{% INCLUDEJS '@maxwellwr_turnstile/js/settings.min.js' %}
+{%- set INCLUDED_TURNSTILE_ACP_JS = true -%}
+{% endif %}

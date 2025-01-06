@@ -1,0 +1,20 @@
+/**
+ * CloudFlare Turnstile extension for phpBB.
+ * @author Maxim Maslich <mmaslich@gmail.com>
+ * @copyright 2025 Maxim Maslich
+ * @license GPL-2.0-only
+ */
+#acp-turnstile input[type="text"],
+#acp-turnstile input[type="password"] {
+	font-family: Consolas, monaco, monospace;
+}
+
+#toggle-turnstile-secret {
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+#toggle-turnstile-secret,
+#toggle-turnstile-secret .icon {
+	display: inline-block;
+}
