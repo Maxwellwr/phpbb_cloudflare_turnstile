@@ -2,7 +2,7 @@
     "name": "maxwellwr/turnstile",
     "type": "phpbb-extension",
     "description": "CloudFlare Turnstile extension for phpBB",
-    "homepage": "",
+    "homepage": "https://github.com/Maxwellwr/phpbb_cloudflare_turnstile",
     "version": "1.0.0",
     "time": "2025-01-01",
     "keywords": [
@@ -18,7 +18,7 @@
         {
             "name": "Maxim Maslich",
             "email": "mmaslich@gmail.com",
-            "homepage": "",
+            "homepage": "https://github.com/Maxwellwr",
             "role": "Lead Developer"
         }
     ],
